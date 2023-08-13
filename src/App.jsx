@@ -15,8 +15,14 @@ const App = () => {
   const [editedSubject, setEditedSubject] = useState("");
   const [loading, setLoading] = useState(false);
 
-
   const addTodoList = () => {
+    if (editingIndex == -1) {
+      if (todoTitle === "" || todoSubject === "") {
+        alert("Please enter both title and subject");
+        return;
+      }
+    }
+
     setLoading(true);
 
     setTimeout(() => {
