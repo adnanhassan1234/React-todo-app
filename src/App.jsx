@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { AiOutlineDelete } from "react-icons/ai";
-import { BsCheck2Circle } from "react-icons/bs";
-import { BiSolidEdit } from "react-icons/bi";
-import Loader from "./components/Loader/Loader";
+import TodoList from "./components/Loader/TodoList/TodoList";
+import CompletedTodo from "./components/CompletedTodo/CompletedTodo";
 
 const App = () => {
   const [completeScreen, setCompleteScreen] = useState(false);
@@ -198,63 +196,21 @@ const App = () => {
                 Completed
               </button>
             </div>
-            {loading ? (
-              <div className="loading-section d-flex justify-content-center">
-                <Loader />
-              </div>
-            ) : (
-              completeScreen === false &&
-              todoList?.map((todoContent, index) => (
-                <div className="todo_list mb-2" key={index}>
-                  <div className="todo_list_item text-white mt-2">
-                    <div className="">
-                      <h4>{todoContent.title}</h4>
-                      <p>{todoContent.subject}</p>
-                    </div>
-                    <div className="icons">
-                      <AiOutlineDelete
-                        className="delete_icon"
-                        title="Deleted Todo"
-                        onClick={() => handleDeleteTodo(index)}
-                      />
-                      <BiSolidEdit
-                        className="edit_icon ms-2"
-                        title="Edit Todo"
-                        onClick={() => handleEditTodo(index)}
-                      />
-                      <BsCheck2Circle
-                        title="Completed Todo"
-                        className="check_icon"
-                        onClick={() => handleCompletedTodo(index)}
-                      />
-                    </div>
-                  </div>
-                </div>
-              ))
-            )}
-            {completeScreen === true &&
-              completedTodo?.map((todoContentCom, index) => (
-                <div className="todo_list mb-2" key={index}>
-                  <div className="todo_list_item text-white mt-2">
-                    <div>
-                      <h4>{todoContentCom.title}</h4>
-                      <p>{todoContentCom.subject}</p>
-                      <p>
-                        <small>
-                          Completed on : {todoContentCom.completedOnTime}
-                        </small>
-                      </p>
-                    </div>
-                    <div className="completed_icons">
-                      <AiOutlineDelete
-                        title="Deleted Todo"
-                        className="delete_icon"
-                        onClick={() => deleteCompletedTodo(index)}
-                      />
-                    </div>
-                  </div>
-                </div>
-              ))}
+            {/* TodoList component */}
+            <TodoList
+              loading={loading}
+              completeScreen={completeScreen}
+              todoList={todoList}
+              handleDeleteTodo={handleDeleteTodo}
+              handleEditTodo={handleEditTodo}
+              handleCompletedTodo={handleCompletedTodo}
+            />
+            {/* CompletedTodoList component */}
+            <CompletedTodo
+              completeScreen={completeScreen}
+              completedTodo={completedTodo}
+              deleteCompletedTodo={deleteCompletedTodo}
+            />
           </div>
         </div>
       </div>
