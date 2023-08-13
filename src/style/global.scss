@@ -1,0 +1,132 @@
+.todo_app {
+    background-color: #201e22;
+    min-height: 100vh;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .title {
+        text-align: center;
+    }
+
+    .completed_icons {
+        margin-top: 37px;
+
+        .delete_icon {
+            font-size: 30px;
+            cursor: pointer;
+
+            &:hover {
+                color: red;
+                transition: 0.4s;
+            }
+        }
+    }
+.edit_icon{
+    font-size: 30px;
+    cursor: pointer;
+}
+    label {
+        color: white;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .hr {
+        margin-top: 12px;
+        border: 1px solid rgb(92, 91, 91);
+    }
+
+    .row {
+        padding: 15px;
+        background-color: #34343a;
+        // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 8px;
+        max-width: 900px;
+        margin: auto !important;
+    }
+
+    .secondaryBtn {
+        background-color: rgb(71, 71, 71);
+        color: white;
+        border: none;
+        border-radius: 2px;
+        padding: 10px;
+        width: fit-content;
+        cursor: pointer;
+    }
+
+    .active {
+        background-color: #02E37A !important;
+        transition: 0.4s;
+    }
+
+    .todo_wrapper {
+        .btn-primary {
+            background-color: #02E37A !important;
+            border: 1px solid #02E37A;
+
+            &:hover {
+                border: 1px solid #fff;
+            }
+        }
+    }
+
+    .todo_list {
+        display: flex;
+        flex-direction: column;
+
+        .todo_list_item {
+            background-color: rgb(71, 71, 71);
+            padding: 10px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            line-height: 21px;
+            text-align: center;
+
+            h4 {
+                font-size: 21px;
+                color: rgb(0, 230, 122) !important;
+                font-weight: bold;
+                margin: 0;
+                text-align: initial;
+
+            }
+
+            p {
+                font-size: 14px;
+                color: rgb(161, 161, 161);
+                margin-top: 8px;
+                text-align: left;
+            }
+
+            .icons {
+                margin-top: 15px;
+
+                .delete_icon {
+                    font-size: 30px;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: red;
+                        transition: 0.4s;
+                    }
+                }
+
+                .check_icon {
+                    font-size: 27px;
+                    cursor: pointer;
+                    margin-top: 6px;
+                    margin-left: 10px;
+                    color: rgb(0, 230, 122) !important;
+
+                    &:hover {
+                        color: rgb(4, 196, 106);
+                    }
+                }
+            }
+
+
+        }
+    }
+}
