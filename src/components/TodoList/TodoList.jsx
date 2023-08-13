@@ -2,7 +2,7 @@ import React from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import { BiSolidEdit } from "react-icons/bi";
 import { BsCheck2Circle } from "react-icons/bs";
-import Loader from "../Loader";
+import Loader from "../Loader/Loader";
 
 const TodoList = (props) => {
   const {

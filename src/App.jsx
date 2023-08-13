@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import TodoList from "./components/Loader/TodoList/TodoList";
 import CompletedTodo from "./components/CompletedTodo/CompletedTodo";
+import TodoList from "./components/TodoList/TodoList";
 
 const App = () => {
   const [completeScreen, setCompleteScreen] = useState(false);
